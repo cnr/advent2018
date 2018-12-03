@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: fe18045bb7e4ef68d1a72d61a03f1e86797249f1060eaef7ec38493079c54f10
+-- hash: 045c2a7a327144dbb7370502e6378d12a853fc62c8859c0be568ee7baac4d9b4
 
 name:           advent2018
 version:        0.1.0.0
@@ -35,6 +35,20 @@ library
 
 executable day01
   main-is: src/Day01.hs
+  other-modules:
+      Paths_advent2018
+  ghc-options: -Wall -O2
+  build-depends:
+      advent2018
+    , base
+    , containers
+    , megaparsec
+    , mtl
+    , split
+  default-language: Haskell2010
+
+executable day02
+  main-is: src/Day02.hs
   other-modules:
       Paths_advent2018
   ghc-options: -Wall -O2
