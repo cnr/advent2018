@@ -1,0 +1,48 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: fe18045bb7e4ef68d1a72d61a03f1e86797249f1060eaef7ec38493079c54f10
+
+name:           advent2018
+version:        0.1.0.0
+synopsis:       Advent of Code 2018 solutions in Haskell
+homepage:       https://github.com/cnr/advent2018#readme
+bug-reports:    https://github.com/cnr/advent2018/issues
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/cnr/advent2018
+
+library
+  exposed-modules:
+      Common
+  other-modules:
+      Paths_advent2018
+  hs-source-dirs:
+      lib
+  ghc-options: -Wall -O2
+  build-depends:
+      base
+    , containers
+    , megaparsec
+    , mtl
+    , split
+  default-language: Haskell2010
+
+executable day01
+  main-is: src/Day01.hs
+  other-modules:
+      Paths_advent2018
+  ghc-options: -Wall -O2
+  build-depends:
+      advent2018
+    , base
+    , containers
+    , megaparsec
+    , mtl
+    , split
+  default-language: Haskell2010

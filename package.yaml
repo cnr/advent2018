@@ -1,0 +1,24 @@
+name: advent2018
+version: 0.1.0.0
+synopsis: Advent of Code 2018 solutions in Haskell
+github: cnr/advent2018
+
+ghc-options: -Wall -O2
+
+dependencies:
+  - base
+  - containers
+  - megaparsec
+  - mtl
+  - split
+
+library:
+  source-dirs: lib
+  exposed-modules:
+    - Common
+
+executables:
+
+  day01:
+    main: src/Day01.hs
+    dependencies: [advent2018]
