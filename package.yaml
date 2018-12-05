@@ -30,3 +30,7 @@ executables:
   day03:
     main: src/Day03.hs
     dependencies: [advent2018]
+
+  day04:
+    main: src/Day04.hs
+    dependencies: [advent2018]
