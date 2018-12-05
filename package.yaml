@@ -34,3 +34,7 @@ executables:
   day04:
     main: src/Day04.hs
     dependencies: [advent2018]
+
+  day05:
+    main: src/Day05.hs
+    dependencies: [advent2018]
