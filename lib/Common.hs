@@ -6,6 +6,8 @@ module Common
     , readParsed
     , readParsedLines
     
+    , pick
+
     , dfs
     ) where
 
@@ -33,6 +35,12 @@ readParsedLines parser n = map (unsafeParse parser) . lines <$> readInput n
 
 unsafeParse :: Parser a -> String -> a
 unsafeParse parser input = result where Right result = parse parser "[source]" input
+
+-- Utility functions
+
+pick :: [a] -> [(a,[a])]
+pick []     = []
+pick (x:xs) = (x,xs) : (fmap (x:) <$> pick xs)
 
 -- Graph traversal
 

@@ -38,3 +38,7 @@ executables:
   day05:
     main: src/Day05.hs
     dependencies: [advent2018]
+
+  day06:
+    main: src/Day06.hs
+    dependencies: [advent2018]
