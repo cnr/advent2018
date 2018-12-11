@@ -6,6 +6,7 @@ module Common
     , readParsed
     , readParsedLines
     
+    , (!?)
     , pick
 
     , dfs
@@ -36,11 +37,17 @@ readParsedLines parser n = map (unsafeParse parser) . lines <$> readInput n
 unsafeParse :: Parser a -> String -> a
 unsafeParse parser input = result where Right result = parse parser "[source]" input
 
--- Utility functions
+-- Pick each element of the list and pair it with the rest of the list
 
 pick :: [a] -> [(a,[a])]
 pick []     = []
 pick (x:xs) = (x,xs) : (fmap (x:) <$> pick xs)
+
+-- Safe list access by index
+(!?) :: Show a => [a] -> Int -> Maybe a
+xs !? n
+  | n < length xs = Just (xs !! n)
+  | otherwise     = Nothing
 
 -- Graph traversal
 
